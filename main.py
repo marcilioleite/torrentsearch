@@ -3,11 +3,11 @@ import torrent_retriever
 import torrent_downloader
 import time
 
-online_torrent = torrent_search.first('suits s01e03')
-local_torrent = torrent_retriever.retrieve(online_torrent)
+online_torrent = torrent_search.first('Wilfred S03E06')
+local_torrent = torrent_retriever.retrieve(online_torrent['torrent'], online_torrent['name'])
 download = torrent_downloader.Download(local_torrent, 'C:/Downloads')
 
 while (not download.ready()):
-    print '%d %% done' % (download.progress())
-    print '%s' % (download.download_rate())
+    print '%d%% pronto' % (download.progress())
+    print '%sps' % (download.download_rate())
     time.sleep(1)

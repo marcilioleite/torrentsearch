@@ -15,4 +15,5 @@ Search torrents through Fenopy's API.
 def first(keyword):
     url = '%s?keyword=%s&format=json' % (api_url, keyword)
     r = requests.get(url)
-    return r.json()[0]['torrent']
+    first = r.json()[0]
+    return {'name':first['name'],'torrent':first['torrent']}

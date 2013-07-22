@@ -26,10 +26,10 @@ def humanize_bytes(bytes, precision=1):
         (1<<30L, 'GB'),
         (1<<20L, 'MB'),
         (1<<10L, 'kB'),
-        (1, 'bytes')
+        (1, 'b')
     )
     if bytes == 1:
-        return '1 byte'
+        return '1 b'
     for factor, suffix in abbrevs:
         if bytes >= factor:
             break
