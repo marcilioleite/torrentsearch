@@ -26,6 +26,13 @@ class Download:
             'save_path': savepath,
             'ti': libtorrent.torrent_info(torrent)
         })
+        print savepath
+      
+    '''
+    @return: Filename
+    '''
+    def name(self):
+        return self.handle.name()
         
     '''
     @return: True if download is ready. False otherwise.
